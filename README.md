@@ -123,7 +123,7 @@ taskflow/
 ## 🛠️ Setup & Installation
 
 ### Prerequisites
-- Node.js v16+
+- Node.js 
 - MongoDB (local or MongoDB Atlas)
 - npm or yarn
 
@@ -139,7 +139,7 @@ cd rbac-task-management-system
 ```bash
 cd backend
 npm install
-cp .env.example .env
+
 ```
 
 Edit the `.env` file:
@@ -158,7 +158,6 @@ Start the backend server:
 npm run dev
 ```
 
-Backend runs at: `http://localhost:5000`
 
 ### 3. Setup Frontend
 
@@ -167,9 +166,6 @@ cd ../frontend
 npm install
 npm run dev
 ```
-
-Frontend runs at: `http://localhost:3000`
-
 ---
 
 ## 🔑 API Endpoints
@@ -207,35 +203,6 @@ Frontend runs at: `http://localhost:3000`
 - Can only manage their own tasks
 - Cannot access admin pages or APIs
 - Blocked from login if account is inactive
-
----
-
-## 🔐 How Authentication Works
-
-1. User registers or logs in → server returns a **JWT token**
-2. Token is stored in `localStorage`
-3. Every API request sends the token in the header:
-   ```
-   Authorization: Bearer <token>
-   ```
-4. Backend middleware verifies the token before processing the request
-
----
-
-## 📊 How Analytics Work
-
-Analytics use **MongoDB Aggregation Pipeline** to calculate stats directly in the database:
-
-```js
-const taskStats = await Task.aggregate([
-  {
-    $group: {
-      _id: "$status",
-      count: { $sum: 1 }
-    }
-  }
-]);
-```
 
 ---
 
