@@ -1,15 +1,19 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "https://rbac-task-management-system-1.onrender.com/api",
 });
 
 // Attach JWT token to every request if available
 API.interceptors.request.use((config) => {
   const user = JSON.parse(localStorage.getItem("user") || "null");
-  if (user && user.token) {
+
+  if (user?.token) {
     config.headers.Authorization = `Bearer ${user.token}`;
   }
+
   return config;
 });
 
@@ -26,12 +30,21 @@ export const deleteTask = (id) => API.delete(`/tasks/${id}`);
 
 // ==================== ADMIN ====================
 export const fetchAllUsers = () => API.get("/admin/users");
+
 export const updateUserStatus = (id, status) =>
   API.put(`/admin/users/${id}/status`, { status });
-export const deleteUser = (id) => API.delete(`/admin/users/${id}`);
+
+export const deleteUser = (id) =>
+  API.delete(`/admin/users/${id}`);
 
 export const fetchAllTasks = () => API.get("/admin/tasks");
-export const adminDeleteTask = (id) => API.delete(`/admin/tasks/${id}`);
+
+export const adminDeleteTask = (id) =>
+  API.delete(`/admin/tasks/${id}`);
 
 export const fetchActivityLogs = () => API.get("/admin/logs");
-export const fetchAnalytics = () => API.get("/admin/analytics");
+
+export const fetchAnalytics = () =>
+  API.get("/admin/analytics");
+
+export default API;
