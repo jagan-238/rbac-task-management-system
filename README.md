@@ -14,11 +14,17 @@ A production-style Full Stack Task Management System built with the **MERN Stack
 
 > Admin Dashboard — Analytics Overview
 
-![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard)
+![Admin Dashboard]
+<img width="898" height="417" alt="image" src="https://github.com/user-attachments/assets/3a153602-b14a-4268-ae50-4d012877659a" />
+<img width="875" height="419" alt="image" src="https://github.com/user-attachments/assets/7693779b-b9d5-4675-b9df-fd4812452cb4" />
+
+
 
 > User Dashboard — My Tasks
 
-![User Dashboard](https://via.placeholder.com/800x400?text=User+Dashboard)
+![User Dashboard]
+<img width="884" height="425" alt="image" src="https://github.com/user-attachments/assets/d0638e53-f211-4a7c-81d4-f3d125b066cb" />
+
 
 ---
 
