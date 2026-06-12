@@ -56,7 +56,7 @@ A production-style Full Stack Task Management System built with the **MERN Stack
 ## 🗂️ Project Structure
 
 ```
-taskflow/
+rbac-task-management-system/
 │
 ├── backend/
 │   ├── config/
